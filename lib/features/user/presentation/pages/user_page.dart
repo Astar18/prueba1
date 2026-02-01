@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:prueba1/features/user/data/models/uv_model.dart';
+import 'package:prueba1/features/user/presentation/widgets/uv_display_card.dart';
 
 class UserPage extends StatefulWidget {
   const UserPage({super.key});
@@ -63,24 +64,21 @@ class _UserPageState extends State<UserPage> {
     return Scaffold(
       appBar: AppBar(title: const Text('Datos UV Ecuador')),
       body: Center(
-        child: _isLoading 
-          ? const CircularProgressIndicator()
-          : Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text('Presiona para obtener el índice UV en Quito'),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: fetchUvIndex,
-                  child: const Text('Consultar API'),
-                ),
-                TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: const Text('Regresar al Menú'),
-                ),
-              ],
-            ),
-      ),
+      child: _isLoading 
+        ? const CircularProgressIndicator()
+        : Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Widget de tarjeta para mejor presentación
+              UvDisplayCard(uvIndex: 5.5, location: "Quito, Ecuador"), 
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: fetchUvIndex,
+                child: const Text('Actualizar Datos'),
+              ),
+            ],
+          ),
+    ),
     );
   }
 }
