@@ -42,16 +42,19 @@ class _UserPageState extends State<UserPage> {
   }
   // Función extra para ponerle color al SnackBar según el nivel de radiación
   Color _getUvColor(double uv) {
-    if (uv < 3) return Colors.green;
-    if (uv < 6) return Colors.yellow;
-    if (uv < 8) return Colors.orange;
-    if (uv < 11) return Colors.red;
-    return Colors.purple;
+    if (uv < 3) return Colors.green.shade100;
+    if (uv < 6) return Colors.yellow.shade100;
+    if (uv < 8) return Colors.orange.shade100;
+    if (uv < 11) return Colors.red.shade100;
+    return Colors.purple.shade100;
   }
 
   void _showSnackBar(String message, Color color) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message), backgroundColor: color),
+      SnackBar(
+        content: Text(message, style: const TextStyle(color: Colors.black)),
+        backgroundColor: color,
+      ),
     );
   }
 
