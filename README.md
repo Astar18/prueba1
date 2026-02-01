@@ -1,16 +1,10 @@
 # prueba1
 
-A new Flutter project.
+App generada solo para usar android.
 
-## Getting Started
+flutter create --platforms=android nombre aplicación
 
-This project is a starting point for a Flutter application.
+Estructura parecida a como programo en angular.
 
-A few resources to get you started if this is your first Flutter project:
+Se va a consumir un endpoint gratuito el cual puede o no estar disponible o demorar un poco.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
